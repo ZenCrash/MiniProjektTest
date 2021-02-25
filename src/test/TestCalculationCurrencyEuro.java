@@ -24,18 +24,23 @@ public class TestCalculationCurrencyEuro {
 	/**
 	 * Entering no coins should make the display report 0 minutes parking time.
 	 */
+	
 	@Test
-	public void shouldDisplay0() throws IllegalCoinException {
+	public void shouldDisplay6minutesFor1Euro() throws IllegalCoinException {
 		
 		// Arrange
-		int expectedParkingTime = 0;
+		int expectedParkingTime = 40;	// In minutes
+		int coinValue = 1;
+		Currency.ValidCurrency coinCurrency = Currency.ValidCurrency.EURO;
+		Currency.ValidCoinType coinType = Currency.ValidCoinType.INTEGER;
 		
 		// Act
-		// No action
-		
+		ps.addPayment(coinValue, coinCurrency, coinType);
+			
 		// Assert
-		assertEquals("Should display 0 min for no coins", expectedParkingTime, ps.readDisplay());
-	}	
+		assertEquals("Should display 6 min for 1Euro", expectedParkingTime, ps.readDisplay());
+	}
+	
 
 	/**
 	 * Entering 5 cents should make the display report 2 minutes parking time
@@ -43,16 +48,16 @@ public class TestCalculationCurrencyEuro {
 	@Test
 	public void shouldDisplay2MinFor5Cents() throws IllegalCoinException {
 		
-//		// Arrange
-//		int expectedParkingTime = 2;	// In minutes		
-//		int coinValue = 5;
-//		Currency.ValidCurrency coinCurrency = Currency.ValidCurrency.EURO;
-//		Currency.ValidCoinType coinType = Currency.ValidCoinType.FRACTION;
+		// Arrange
+		int expectedParkingTime = 2;	// In minutes		
+		int coinValue = 5;
+		Currency.ValidCurrency coinCurrency = Currency.ValidCurrency.EURO;
+		Currency.ValidCoinType coinType = Currency.ValidCoinType.FRACTION;
 		
 		// Act
-		
+		ps.addPayment(coinValue, coinCurrency, coinType);
 		// Assert
-
+		assertEquals("Should display 2 min for 5cent", expectedParkingTime, ps.readDisplay());
 	}
 
 	
