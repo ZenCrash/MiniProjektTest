@@ -48,9 +48,9 @@ public class TestCalculationCurrencyMixed {
 	@Test
 	public void shouldDisplayMultiple() throws IllegalCoinException {
 		// Arrange
-		int expectedParkingTime = 4;	// In minutes
-		int coinValueDKKFRA = 50;
-		int coinValueEUROFRA = 1;
+		int expectedParkingTime = 49;	// In minutes
+		int coinValueDKK = 50;
+		int coinValueEURO = 1;
 		int coinValueDKKINT = 1;
 		int coinValueEUROINT = 1;
 		
@@ -60,8 +60,8 @@ public class TestCalculationCurrencyMixed {
 		Currency.ValidCoinType coinTypeINT = Currency.ValidCoinType.INTEGER;
 		
 		// Act
-		ps.addPayment(coinValueDKKFRA, coinCurrencyDKK, coinTypeFRA);
-		ps.addPayment(coinValueEUROFRA, coinCurrencyEURO, coinTypeFRA);
+		ps.addPayment(coinValueDKK, coinCurrencyDKK, coinTypeFRA);
+		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinTypeFRA);
 		ps.addPayment(coinValueDKKINT, coinCurrencyDKK, coinTypeINT);
 		ps.addPayment(coinValueEUROINT, coinCurrencyEURO, coinTypeINT);
 
