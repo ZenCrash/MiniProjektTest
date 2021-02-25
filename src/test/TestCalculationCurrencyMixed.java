@@ -45,6 +45,8 @@ public class TestCalculationCurrencyMixed {
 		assertEquals("Should display 4 min for 50 øre and 1 cent", expectedParkingTime, ps.readDisplay());
 	}
 	
+	//VI BRUGER DEN HER I RAPPORTEN
+	
 	@Test
 	public void shouldDisplayMultiple() throws IllegalCoinException {
 		// Arrange

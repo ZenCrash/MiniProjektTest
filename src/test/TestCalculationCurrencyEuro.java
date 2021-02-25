@@ -38,6 +38,27 @@ public class TestCalculationCurrencyEuro {
 		assertEquals("Should display 6 min for 1Euro", expectedParkingTime, ps.readDisplay());
 	}
 	
+	// BRUGES I RAPPORTEN
+	
+	@Test
+	public void shouldDisplayAboveMAX() throws IllegalCoinException {
+		
+		// Arrange
+		int expectedParkingTime = 12080;	// In minutes
+		int coinValue = 2;
+		Currency.ValidCurrency coinCurrency = Currency.ValidCurrency.EURO;
+		Currency.ValidCoinType coinType = Currency.ValidCoinType.INTEGER;
+		
+		// Act
+		for (int i = 0; i < 151; i++) {
+		ps.addPayment(coinValue, coinCurrency, coinType);
+		System.out.println(ps.readDisplay());
+		}
+		
+		// Assert
+		assertEquals("Shit doesn't work yo", expectedParkingTime, ps.readDisplay());
+	}
+	
 
 	/**
 	 * Entering 5 cents should make the display report 2 minutes parking time
