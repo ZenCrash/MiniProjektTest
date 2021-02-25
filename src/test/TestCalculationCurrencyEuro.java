@@ -45,6 +45,9 @@ public class TestCalculationCurrencyEuro {
 	/**
 	 * Entering 5 cents should make the display report 2 minutes parking time
 	 */
+	
+	//VI BRUGER DEN HER I RAPPORTEN
+	
 	@Test
 	public void shouldDisplay2MinFor5Cents() throws IllegalCoinException {
 		

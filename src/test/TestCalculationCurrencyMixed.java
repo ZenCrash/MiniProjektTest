@@ -24,6 +24,9 @@ public class TestCalculationCurrencyMixed {
 	/**
 	 * Entering 1 cent and 50 øre should make the display report 4 minutes parking time.
 	 */
+
+	//VI BRUGER DEN HER I RAPPORTEN
+	
 	@Test
 	public void shouldDisplay4MinFor1CentAnd50Ore() throws IllegalCoinException {
 		// Arrange
@@ -41,6 +44,33 @@ public class TestCalculationCurrencyMixed {
 		// Assert
 		assertEquals("Should display 4 min for 50 øre and 1 cent", expectedParkingTime, ps.readDisplay());
 	}
+	
+	@Test
+	public void shouldDisplayMultiple() throws IllegalCoinException {
+		// Arrange
+		int expectedParkingTime = 4;	// In minutes
+		int coinValueDKKFRA = 50;
+		int coinValueEUROFRA = 1;
+		int coinValueDKKINT = 1;
+		int coinValueEUROINT = 1;
+		
+		Currency.ValidCurrency coinCurrencyDKK = Currency.ValidCurrency.DKK;
+		Currency.ValidCurrency coinCurrencyEURO = Currency.ValidCurrency.EURO;
+		Currency.ValidCoinType coinTypeFRA = Currency.ValidCoinType.FRACTION;
+		Currency.ValidCoinType coinTypeINT = Currency.ValidCoinType.INTEGER;
+		
+		// Act
+		ps.addPayment(coinValueDKKFRA, coinCurrencyDKK, coinTypeFRA);
+		ps.addPayment(coinValueEUROFRA, coinCurrencyEURO, coinTypeFRA);
+		ps.addPayment(coinValueDKKINT, coinCurrencyDKK, coinTypeINT);
+		ps.addPayment(coinValueEUROINT, coinCurrencyEURO, coinTypeINT);
+
+		// Assert
+		assertEquals("Should display 4 min for 50 øre and 1 cent", expectedParkingTime, ps.readDisplay());
+	}
+	
+	//VI BRUGER DEN HER I RAPPORTEN
+	
 	@Test(expected = IllegalCoinException.class)
 	public void shouldDisplay4MinFor50OreAnd50Ore() throws IllegalCoinException {
 		// Arrange

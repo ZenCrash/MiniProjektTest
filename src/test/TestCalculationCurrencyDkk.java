@@ -40,6 +40,8 @@ public class TestCalculationCurrencyDkk {
 		assertEquals("Should display 3 min for 50 øre", expectedParkingTime, ps.readDisplay());
 	}
 
+	//VI BRUGER DEN HER I RAPPORTEN
+	
 	@Test(expected = IllegalCoinException.class)
 	public void shouldDisplay3MinFor25Øre() throws IllegalCoinException {
 		
@@ -56,6 +58,8 @@ public class TestCalculationCurrencyDkk {
 		assertEquals("Should display 0 min for illegal coin", expectedParkingTime, ps.readDisplay());
 	}
 
+	//VI BRUGER DEN HER I RAPPORTEN
+	
 	@Test
 	public void shouldDisplay6MinFor1Dkk() throws IllegalCoinException {
 		
