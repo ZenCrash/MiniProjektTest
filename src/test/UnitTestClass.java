@@ -31,21 +31,11 @@ public class UnitTestClass {
 		int expectedPrice = 25;
 		PZone zone = new PZone();
 		int zoneID = zone.getpZoneId();
-		System.out.println(zoneID);
-		
-		
+
 		//act
-		
 		PPrice price = dbPrice.getPriceByZoneId(zoneID);
-		System.out.println(zoneID);
 		
-		System.out.println(price);
-		
-		//assert
-		
-		int p = price.getParkingPrice();
-		System.out.println(p);
-		
+		//assert	
 		assertEquals(p, expectedPrice);
 	}
 	

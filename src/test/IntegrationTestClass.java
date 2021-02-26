@@ -60,7 +60,7 @@ public class IntegrationTestClass {
 		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
 
 		// Assert
-		assertEquals("", pPayStation.getAmount(), coinValueEURO);
+		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
 	}
 	
 	@Test
@@ -75,7 +75,7 @@ public class IntegrationTestClass {
 		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
 
 		// Assert
-		assertEquals("", pPayStation.getAmount(), coinValueEURO);
+		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
 	}
 	
 	@Test
@@ -90,7 +90,7 @@ public class IntegrationTestClass {
 		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
 
 		// Assert
-		assertEquals("", pPayStation.getAmount(), coinValueEURO);
+		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
 	}
 	
 	@Test
@@ -105,7 +105,7 @@ public class IntegrationTestClass {
 		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
 
 		// Assert
-		assertEquals("", pPayStation.getAmount(), coinValueEURO);
+		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
 	}
 
 /** Fixture for pay station testing. */
