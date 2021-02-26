@@ -66,13 +66,13 @@ public class IntegrationTestClass {
 	@Test
 	public void currencyCent() throws IllegalCoinException {
 		// Arrange
-		int expectedParkingTime = 40;	// In minutes
-		int coinValueEURO = 1;
-		Currency.ValidCurrency coinCurrencyEURO = Currency.ValidCurrency.EURO;
-		Currency.ValidCoinType coinType = Currency.ValidCoinType.INTEGER;
+		int expectedParkingTime = 1;	// In minutes
+		int coinValueCENT = 1;
+		Currency.ValidCurrency coinCurrencyCENT = Currency.ValidCurrency.EURO;
+		Currency.ValidCoinType coinType = Currency.ValidCoinType.FRACTION;
 		
 		// Act
-		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
+		ps.addPayment(coinValueCENT, coinCurrencyCENT, coinType);
 
 		// Assert
 		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
@@ -81,13 +81,13 @@ public class IntegrationTestClass {
 	@Test
 	public void currencyKrone() throws IllegalCoinException {
 		// Arrange
-		int expectedParkingTime = 40;	// In minutes
-		int coinValueEURO = 1;
-		Currency.ValidCurrency coinCurrencyEURO = Currency.ValidCurrency.EURO;
+		int expectedParkingTime = 6;	// In minutes
+		int coinValueDKK = 1;
+		Currency.ValidCurrency coinCurrencyDKK = Currency.ValidCurrency.DKK;
 		Currency.ValidCoinType coinType = Currency.ValidCoinType.INTEGER;
 		
 		// Act
-		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
+		ps.addPayment(coinValueDKK, coinCurrencyDKK, coinType);
 
 		// Assert
 		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
@@ -96,13 +96,13 @@ public class IntegrationTestClass {
 	@Test
 	public void currencyÿre() throws IllegalCoinException {
 		// Arrange
-		int expectedParkingTime = 40;	// In minutes
-		int coinValueEURO = 1;
-		Currency.ValidCurrency coinCurrencyEURO = Currency.ValidCurrency.EURO;
-		Currency.ValidCoinType coinType = Currency.ValidCoinType.INTEGER;
+		int expectedParkingTime = 1;	// In minutes
+		int coinValueDKK = 1;
+		Currency.ValidCurrency coinCurrencyDKK = Currency.ValidCurrency.DKK;
+		Currency.ValidCoinType coinType = Currency.ValidCoinType.FRACTION;
 		
 		// Act
-		ps.addPayment(coinValueEURO, coinCurrencyEURO, coinType);
+		ps.addPayment(coinValueDKK, coinCurrencyDKK, coinType);
 
 		// Assert
 		assertEquals("Should not throw IlligalCoinException", expectedParkingTime, ps.readDisplay());
