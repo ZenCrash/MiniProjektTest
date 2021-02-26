@@ -37,8 +37,16 @@ public class TestIllegalCoin {
 	}
 
 	// unknown Euro coin value
-	/*
-	 * @Test(expected = IllegalCoinException.class) public void
-	 * shouldRejectIllegalEuroCoin() throws IllegalCoinException { // }
-	 */
+	
+	 @Test(expected = IllegalCoinException.class) public void
+	 shouldRejectIllegalEuroCoin() throws IllegalCoinException { 
+		// Arrange
+		int amount = 3;
+		Currency.ValidCurrency currency = Currency.ValidCurrency.EURO;
+		Currency.ValidCoinType coinType = Currency.ValidCoinType.INTEGER;
+		 
+		// Act
+		ps.addPayment(amount, currency, coinType);
+	 }
+	 
 }
